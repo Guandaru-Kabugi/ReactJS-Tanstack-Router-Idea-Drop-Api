@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 import { errorHandler } from './middleware/errorhandler.js';
 
 import router from './routes/ideasroutes.js';
+import connectDB from './config/db.js';
 
 dotenv.config();
 
@@ -12,6 +13,9 @@ const app = express();
 
 
 const PORT = process.env.PORT|| 8000;
+
+//connect to db
+connectDB();
 
 app.use(cors());
 app.use(express.json());
