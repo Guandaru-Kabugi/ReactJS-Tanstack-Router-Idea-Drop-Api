@@ -6,6 +6,8 @@ import { errorHandler } from './middleware/errorhandler.js';
 
 import router from './routes/ideasroutes.js';
 import connectDB from './config/db.js';
+import authRouter from './routes/authroutes.js';
+import cookieParser from 'cookie-parser';
 
 dotenv.config();
 
@@ -20,9 +22,11 @@ connectDB();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
+app.use(cookieParser());
 
 //routes
 app.use('/api/ideas', router);
+app.use('/api/auth', authRouter);
 
 //404 fall back
 
