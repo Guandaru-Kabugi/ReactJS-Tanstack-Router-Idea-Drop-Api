@@ -21,7 +21,7 @@ connectDB();
 
 const allowedOrigins = [
     'http://localhost:3000',
-    'https://react-js-tanstack-router-idea-drop.vercel.app'
+    'https://idea-drop-ui-kappa-topaz.vercel.app'
 ]
 
 app.use(cors({
